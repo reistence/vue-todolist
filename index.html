@@ -34,13 +34,22 @@
             name="task"
             id="input-task"
             placeholder="Insert a new task to add"
+            v-model="newTask.text"
+            @keyup.enter="addTask"
           />
-          <button>Add</button>
+          <button @click="addTask">Add</button>
         </div>
         <div class="list-container">
           <ul class="list">
-            <li>
-              yo <span><i class="fa-solid fa-xmark"></i></span>
+            <li
+              v-for="(task, index) in tasks"
+              @click="doTask(index)"
+              :class="tasks[index].done === true ? 'strikethrough' : ''"
+            >
+              {{task.text}}
+              <span @click="removeTask(index)"
+                ><i class="fa-solid fa-xmark"></i
+              ></span>
             </li>
           </ul>
         </div>

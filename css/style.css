@@ -54,9 +54,7 @@ header h1 {
   width: 60%;
   text-align: center;
   margin-bottom: 1em;
-}
-.form label {
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .form input {
@@ -66,6 +64,7 @@ header h1 {
   background-color: white;
   color: black;
   border-radius: 20px;
+  font-size: 1rem;
 }
 
 .form button {
@@ -74,7 +73,6 @@ header h1 {
   border-radius: 20px;
   background-color: #4eba88;
   color: white;
-  font-size: 1rem;
 }
 
 .list-container {
@@ -96,6 +94,10 @@ header h1 {
 .list li > span {
   color: red;
   font-size: 2.5rem;
+}
+
+.list li.strikethrough {
+  text-decoration: line-through;
 }
 
 .list li:nth-child(even) {
