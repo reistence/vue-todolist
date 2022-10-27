@@ -130,6 +130,18 @@ header h1 {
   transform: scale(1.1);
   transition: 300ms;
 }
+
+.list li div span {
+  color: #4eba88;
+  visibility: hidden;
+  margin-right: 0.3em;
+}
+
+.list li div span.checked {
+  visibility: visible;
+  transition: 300ms;
+}
+
 .list li span {
   cursor: pointer;
 }

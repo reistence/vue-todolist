@@ -53,7 +53,12 @@
               v-for="(task, index) in tasks"
               :class="tasks[index].done === true ? 'strikethrough' : ''"
             >
-              <div @click="doTask(index)">{{task.text}}</div>
+              <div @click="doTask(index)">
+                <span :class="tasks[index].done === true ? 'checked' : ''"
+                  ><i class="fa-solid fa-check"></i
+                ></span>
+                {{task.text}}
+              </div>
               <span @click="removeTask(index)"
                 ><i class="fa-solid fa-xmark"></i
               ></span>
