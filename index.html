@@ -49,11 +49,11 @@
               There are no tasks currently
             </li>
             <li
+              v-if="tasks.length > 0"
               v-for="(task, index) in tasks"
-              @click="doTask(index)"
               :class="tasks[index].done === true ? 'strikethrough' : ''"
             >
-              {{task.text}}
+              <div @click="doTask(index)">{{task.text}}</div>
               <span @click="removeTask(index)"
                 ><i class="fa-solid fa-xmark"></i
               ></span>
