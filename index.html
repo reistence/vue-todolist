@@ -36,12 +36,18 @@
             placeholder="Insert a new task to add"
             v-model="newTask.text"
             @keyup.enter="addTask"
-            @keyup.delete="removeLastTask"
           />
-          <button @click="addTask">Add</button>
+          <button @click="addTask">Add a Task</button>
         </div>
+        <p v-if="!longEnough" class="error-msg">
+          The Task field must be longer than one character
+        </p>
+        <p v-if="empty" class="error-msg">The Task field cannot be empty</p>
         <div class="list-container">
           <ul class="list">
+            <li class="no-task" v-if="!tasks.length">
+              There are no tasks currently
+            </li>
             <li
               v-for="(task, index) in tasks"
               @click="doTask(index)"
