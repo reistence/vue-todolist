@@ -57,9 +57,9 @@ createApp({
       this.tasks.splice(index, 1);
     },
 
-    // removeLastTask() {
-    //   this.tasks.pop();
-    // },
+    removeLastTask() {
+      this.tasks.pop();
+    },
     doTask(index) {
       this.tasks[index].done = !this.tasks[index].done;
     },

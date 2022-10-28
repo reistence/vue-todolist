@@ -37,7 +37,9 @@
             v-model="newTask.text"
             @keyup.enter="addTask"
           />
-          <button @click="addTask">Add a Task</button>
+          <button @click="addTask" @keyup.delete="removeLastTask">
+            Add a Task
+          </button>
         </div>
         <p v-if="!longEnough" class="error-msg">
           The Task field must be longer than one character
